@@ -278,9 +278,76 @@ order(xiaochi:'红豆派')//你点的套餐是：主食：香辣鸡腿堡 小吃
 
 ```
 
- 
+ ## promise
+
+```
+function 前一项任务(){ 
+	return new Promise(
+		// 赠 两个开关 
+		function(成功的开关open, 失败的开关err){
+      var 变量=值 
+      原异步任务 
+      异步任务最后一句话 
+      如果异步任务执行成功
+      调用成功的开关open( 变量 ) 
+      //->通向.then()，正常自动执行.then中的下一项任务
+      否则如果异步任务执行失败 调用失败的开关err(错误提示信息)
+      //->通向最后的.catch( )，不同.then()，后续.then()不再执行。 
+    }
+	)
+}
+```
+
+Promise的三大状态：
+
+ 1). pending(挂起)。当异步任务执行过程中， 整个new Promise()对象处于pending(挂起)状态。
+
+• 2). fulfilled(成功)。当异步任务成功执行完，调用成功的开关函数(resolve())时，整个new Promise()对象切换为fulfilled(成功)状态，new Promise()会自动调用.then()执行下一项任务。
+
+3). rejected(出错)。当异步任务执行出错，调用失败的开关(reject())函数时，整个new Promise()对象切换为rejected(出错)状态， new Promise()会自动调用.catch()执行错误处理代码。
+
+Async 和 await
+
+其实就是promise中.then()的简写 目的是彻底消除嵌套。
 
 
+
+1. 只有基于Promise的函数，才支持async和await
+2. await必须用在被async标记的函数内
+
+3. 外层函数必须用async标记。目的是告诉主程序，这段函数内的 代码整体是异步执行的。不影响主程序的执行。
+4. await必须写在前一项任务之前
+5. await的作用等效于.then()，用来通知程序必须等待前一项任务执 行完，才能继续执行后续任务。
+6. 一旦使用了await，前一项任务的resolve(返回值)，可以像普通函 数一样用=接住。后续代码可继续使用该变量里获得的返回值。
+7. await和.then()一样，可多次使用。控制多个异步任务顺序执行。
+
+```
+ran().then(tao).then(dong)
+可改为:
+(async ()=>{
+var bang=await ran();
+bang=await tao(bang);
+dong(bang); })()
+```
+
+
+
+所以，async和await的组合 虽然相对于主程序，整体是异步的 但async内部的多个await 是同步顺序执行的。
+
+用try catch组合代替了.catch(function(){ ... })函数嵌套调用，可自动接住 promise函数中reject()抛出的异常信息。
+
+```
+(async ()=>{ 
+	try{
+    var bang=await ran();
+    bang=await tao(bang);
+    dong(bang); 
+   }catch(err){ 
+    //错误处理代码
+   } 
+  }
+)()
+```
 
 
 
