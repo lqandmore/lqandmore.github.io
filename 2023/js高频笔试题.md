@@ -53,7 +53,7 @@ for of:
  • 只关心元素值，
  • 所以for of将来用的还是非常多的!
 
-![for循环比较](/Users/liquan/Personal/开发随笔/for循环比较.png)
+![compareEachfor](/Users/liquan/Personal/开发随笔/compareEachfor.png)
 
 总结
 
