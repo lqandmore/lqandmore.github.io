@@ -481,3 +481,7 @@ export default defineConfig({
 })
 ```
 
+### 2.5 使用process
+
+需要安装`@types/node`
+
