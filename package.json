@@ -17,6 +17,8 @@
     "dayjs": "^1.11.9",
     "echarts": "^5.4.3",
     "element-plus": "^2.3.9",
+    "github-markdown-css": "^5.3.0",
+    "highlight.js": "^11.9.0",
     "js-cookie": "^3.0.5",
     "marked": "^9.1.2",
     "nprogress": "^0.2.0",
