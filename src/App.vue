@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import markdown from "@/components/markdown.vue"
-
+import markdemo from './2023/demo.md'
 </script>
 
 <template>
   <div>
-    <markdown src="/src/2023/环境相关问题.md" />
+    <markdemo />
   </div>
 </template>
 
