@@ -41,7 +41,7 @@
       "@pureadmin/descriptions/volar"
     ]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","types/*.d.ts","vite.config.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","types/*.d.ts","vite.config.ts","build/*.d.ts"],
   "exclude": ["dist", "**/*.js", "node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
