@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import markdemo from './2023/demo.md'
+// import markdemo from './2023/demo.md'
+import markdown from './components/markdown.vue';
 </script>
 
 <template>
   <div>
-    <markdemo />
+    <!-- <markdemo /> -->
+    <markdown src="./src/2023/demo.md" />
   </div>
 </template>
 
