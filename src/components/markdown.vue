@@ -25,7 +25,9 @@ renderer.paragraph = (text: string) => {
   return `<p class="mark-p" >${text}</p>\n`
 }
 renderer.heading = (text: string, level: number, raw: string) => {
-
+  if (level === 1) {
+    return ""
+  }
   return `
           <h${level}>
             ${text}
@@ -69,6 +71,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <h1></h1>
   <div id="markdown" class="markdown-body" v-html="contentRef">
   </div>
 </template>
@@ -82,7 +85,7 @@ onMounted(() => {
 
 .markdown-body {
 
-  ::v-deep * {
+  :deep(*) {
     text-align: left;
     margin-block-start: 0.3rem;
     margin-block-end: 0.3rem;

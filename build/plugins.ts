@@ -4,6 +4,9 @@ import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import path from "path";
 import marked from "marked"
+import Markdown from 'unplugin-vue-markdown/vite'
+import prism from 'markdown-it-prism'
+
 
 const fileRegex = /\.(md)$/;
 const vuePlugin = createVuePlugin({ include: [/\vue$/, /\.md$/] });
@@ -40,5 +43,15 @@ function transfromMD() {
 
 
 export function getPluginsList(commond: string, VITE_CDN: boolean) {
-  return [vue(), vueJsx(),];
+  return [
+    vueJsx(),
+    vue({ include: [/\.vue$/, /\.md$/] }),
+    Markdown({
+      headEnabled: true,
+      markdownItUses: [
+        prism,
+      ],
+    })
+
+  ];
 }
