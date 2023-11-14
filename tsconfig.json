@@ -7,7 +7,7 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "Node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -31,7 +31,7 @@
     "allowJs": false,
     "paths": {
       "@/*": ["src/*"],
-      "@build/*": ["build/*"]
+      "build/*": ["build/*"]
     },
     "types": [
       "node",
@@ -41,7 +41,7 @@
       "@pureadmin/descriptions/volar"
     ]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","types/*.d.ts","vite.config.ts","build/*.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","types/*.d.ts","build/*.ts"],
   "exclude": ["dist", "**/*.js", "node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

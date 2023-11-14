@@ -1,28 +1,37 @@
 <script setup lang="ts">
 // import markdemo from './2023/demo.md'
-import markdown from './components/markdown.vue';
+import markdown from "./components/markdown.vue";
+import navBar from "@/views/navbar.vue";
+import detail from "@/views/detail.vue";
 </script>
 
 <template>
   <div>
+    <el-container class="common-layout">
+      <el-header>
+        <navBar />
+      </el-header>
+      <el-main>
+        <detail></detail>
+      </el-main>
+      <el-footer>Footer</el-footer>
+    </el-container>
     <!-- <markdemo /> -->
-    <markdown src="./src/2023/demo.md" />
+    <!-- <markdown src="./src/2023/demo.md" /> -->
   </div>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.el-container {
+  width: 100vw;
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.el-header {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  background-color: orange;
 }
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.el-main {
 }
 </style>
